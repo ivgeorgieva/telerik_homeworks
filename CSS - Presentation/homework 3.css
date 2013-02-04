@@ -1,0 +1,13 @@
+﻿div {
+    border-radius:80px;
+    border: 1px solid red;
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(100% 100% 180deg, #000, #FF0000);
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 180deg, from(#FF0000), to(#000));
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-linear-gradient(180deg, #000, #FF0000);
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(0deg, #FF0000, #000); 
+    width:97%;
+}

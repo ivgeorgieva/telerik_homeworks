@@ -1,0 +1,101 @@
+﻿body {
+    font-family: Verdana,sans-serif;
+    font-size: 14px;
+}
+
+    body div.content {
+        width: 645px;
+        margin: auto;
+    }
+
+nav ul.top {
+    padding: 0;
+    margin: 7px;
+    text-align: center;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+}
+
+    nav ul li a {
+        color: #54c7f2;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+hr {
+    width: 95%;
+    height: 2px;
+    border: none;
+    background: #555;
+}
+
+section {
+    border: 2px solid #555;
+    width: 435px;
+    height: auto;
+    float: left;
+    padding: 0px;
+    padding-bottom: 5px;
+}
+
+    section article fieldset {
+        float: left;
+        padding: 2px;
+        margin: 0px 2px 0px 5px;
+        width: 200px;
+    }
+
+        section article fieldset legend {
+            text-align: center;
+        }
+
+        section article fieldset img {
+            margin: 3px 0px 0px 3px;
+            width: 90px;
+            display: block;
+            float: left;
+        }
+
+        section article fieldset p {
+            display: block;
+            margin: 10px 10px 2px 1px;
+            width: 89px;
+            text-align: left;
+        }
+
+            section article fieldset p:first-of-type {
+                margin-top: 20px;
+            }
+
+            section article fieldset p.first {
+                float: right;
+                clear: right;
+            }
+
+            section article fieldset p.second {
+                float: left;
+                clear: left;
+                text-align: center;
+            }
+
+div.range {
+    float: left;
+    font-size: 16px;
+    margin: 55px 0px 0px 15px;
+    display: block;
+    width: 190px;
+}
+
+    div.range label {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    div.range input {
+        margin: 10px 0px 20px 8px;
+        padding-left: 40px;
+    }
+

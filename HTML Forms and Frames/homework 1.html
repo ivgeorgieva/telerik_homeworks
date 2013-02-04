@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Homework 1</title>
+		<style type="text/css">
+			.sub {
+				background-image:url('sub/sub4.gif') ;
+				background-repeat: no-repeat;
+				background-position: center;
+				width: 59px;
+				height: 19px;
+				border: 0 none;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<label for='name'>Member name:</label>
+            <input id='name' type="text" name='Member name' required="required"/><b>*reg</b>
+			<br/>
+			<label for='mail'>Email:</label>
+            <input id='mail' type='email' pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{3,}.[a-zA-Z0-9_]{2,4}" required="required"/><b>*reg</b>
+			<br/>
+			<label for='SchoolInput'>School:</label>
+            <input id='SchoolInput' type="text" name='School' required="required"/><b>*reg</b>
+			<br/>
+			<input type='submit' value="" class='sub'/>
+		</form>
+	</body>	
+</html>

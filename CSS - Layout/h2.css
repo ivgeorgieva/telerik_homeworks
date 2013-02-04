@@ -1,0 +1,64 @@
+﻿body {
+    font-family: Mangal, Latha, Verdana,'Simplified Arabic','Microsoft Sans Serif';
+}
+.body {
+    background: #EEE;
+    border: none;
+    border-radius: 10px;
+    width: 360px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0px 0px 30px 10px;
+}
+
+.box {
+    display: block;
+    background: #fff;
+    border: 1px solid #808080;
+    margin: 30px 8px 20px 8px;
+}
+
+    .box img {
+        margin: 15px;
+        float: left;
+        width: 110px;
+    }
+
+    .box p {
+        font-size: 11px;
+        line-height: 14px;
+    }
+
+    .box span {
+        font-weight: bold;
+    }
+
+    .box a {
+        float: right;
+        text-decoration: none;
+        font-size: 11px;
+        color: white;
+        background-image: url(img/but1.png);
+        background-repeat: repeat-y;
+        text-align: center;
+        margin: 1px;
+        margin-bottom: 10px;
+        padding: 0px 18px;
+        border: 2px outset #8A0000;
+    }
+
+        .box a:first-of-type {
+            margin-right: 15px;
+        }
+
+.clear {
+    clear: both;
+    height: 0px;
+}
+
+

@@ -1,0 +1,37 @@
+﻿body {
+   margin: 0px;
+   font-family: Calibri; 
+}
+table {
+    border-spacing: 0px;
+    border-collapse:collapse;
+}
+th {
+    background-color: rgb(81,180,6);
+    text-align: left;
+    padding: 7px;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    margin: 0px;
+    color: white;
+    font-weight:normal;
+    font-family:Calibri;
+}
+td img {
+    padding: 3px 7px;
+    float: left;
+    width: 30px;
+
+}
+td {
+    text-align:left;
+    padding: 3px 60px 3px 7px;
+    border-right: 1px solid grey;
+    line-height: 20px;
+}
+tr:nth-child(2n) {
+    background-color: rgb(236,236,216);
+}
+td:last-child, th:last-child {
+    border-right: 0 none;
+}

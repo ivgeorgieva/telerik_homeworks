@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Homework 5</title>
+		<style type="text/css">
+			.table {
+				border-spacing: 0px;
+				border-collapse: collapse;
+				font-family: Verdana;
+				font-size: 12px;
+			}
+			.table td {
+				border: 1px solid #CEEDCF;
+				margin: 0;	
+				padding: 7px;
+			}
+			tr.color td  {
+				border-color: #87B572;
+				background-image:url('images/back1.png');
+				background-repeat: repeat-x;
+			}
+		    .color {
+                border: 1px solid  #87B572;
+                background-image:url('images/back1.png');
+				background-repeat: repeat-x;
+		    }
+		    th {
+		        background-image:url('images/back1.png');
+            }
+
+			th.col2 {
+				width: 260px;
+			}
+			th.col3 {
+				width: 160px;
+			}
+			.buton {
+				width: 20px;
+				height: 20px;
+				border: 1px ridge #87B572;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-color: transparent;
+				margin-right: 5px;
+			}
+			.first {
+				background-image: url('images/start.png');				
+			}
+			.pre {
+				background-image: url('images/left.png');
+			}
+			.next {
+				background-image: url('images/right.png');	
+			}
+			.last {
+				background-image: url("images/finish.png");
+			}
+			.filter {
+				background-image: url('images/filter-icon.png'); 
+			}
+			.pager a {
+				text-decoration: none;
+				color: black;
+			}
+			.size {
+				margin-left: 75px;
+			}
+			.items {
+				float: right;
+				padding-top: 7px;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<table class='table'>
+                <thead>
+                    <tr class='color'>
+                        <th colspan="6">Drag a column header and drop it here to group by that column</th>
+                    </tr>
+                    <tr class='color'>
+						<th><label for='product'>ProductID</label></th>
+						<th class="col2"><label for='pname'>Product name</label></th>
+						<th class="col3"><label for='price'>Unit price</label></th>
+						<th class="col3"><label for='Q'>Quantity per unit</label></th>
+						<th class="col3"><label for='stock'>Units in stock</label></th>
+						<th><label for='D'>Discontinued</label></th>
+					</tr>
+                    <tr class='color'>
+						<td>
+							<input type="text" id='product' size="3"/>
+						</td>
+						<td>
+							<input type="text" id='pname'/>
+						</td>
+						<td>
+							<input type="text" id='price' size="10"/>
+							<input type="button" class='filter buton'/>
+						</td>
+						<td>
+							<input type="text" id='Q' size="15"/>
+						</td>
+						<td>
+							<input type="text" id='stock' size="10"/>
+							<input type="button" class='filter buton'/>
+						</td>
+						<td>
+							<input type="checkbox" id='D' value=""/>
+							<input type="button" class='filter buton'/>
+						</td>
+					</tr>
+                </thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Chai</td>
+						<td>$18.00</td>
+						<td>10 boxes x 20 bags</td>
+						<td>39</td>
+						<td><input type="checkbox" name='check'/></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Chang</td>
+						<td>$19.00</td>
+						<td>24 - 12 oz bottles</td>
+						<td>17</td>
+						<td><input type="checkbox" name='check'/></td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Aniseed Syrup</td>
+						<td>$10.00</td>
+						<td>12 - 550 ml bottles</td>
+						<td>13</td>
+						<td><input type="checkbox" name='check'/></td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Chef Anton's Cajun Seasoning</td>
+						<td>$22.00</td>
+						<td>48 - 6 oz jars</td>
+						<td>53</td>
+						<td><input type="checkbox" name='check'/></td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Chef Anton's Gumbo Mix</td>
+						<td>$21.35</td>
+						<td>36 boxes</td>
+						<td>0</td>
+						<td><input type="checkbox" name='check' checked="checked"/></td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Grandma's Boysenberry Spread</td>
+						<td>$25.00</td>
+						<td>12 - 8 oz jars</td>
+						<td>120</td>
+						<td><input type="checkbox" name='check'/></td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Uncle Bob's Organic Dried Pears</td>
+						<td>$30.00</td>
+						<td>12 - 1 lb pkgs.</td>
+						<td>15</td>
+						<td><input type="checkbox" name='check'/></td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Northwoods Cranberry Sauce</td>
+						<td>$40.00</td>
+						<td>12 - 12 oz jars</td>
+						<td>6</td>
+						<td><input type="checkbox" name='check'/></td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Mishi Kobe Niku</td>
+						<td>$97.00</td>
+						<td>18 - 500 g pkgs.</td>
+						<td>29</td>
+						<td><input type="checkbox" name='check' checked="checked"/></td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Ikura</td>
+						<td>$31.00</td>
+						<td>12 - 200ml jars</td>
+						<td>31</td>
+						<td><input type="checkbox" name='check'/></td>
+					</tr>
+					<tr class='color'>
+						<td colspan="6" class='pager'>
+							<input type="button" class="first buton" />
+							<input type="button" class="pre buton"/>
+								<a href="#">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+								<span>...</span>	
+							<input type="button" class='next buton'/>
+							<input type="button" class="last buton"/>
+							<label for='size' class="size">Page size:</label> 
+								<select id='size' name='Page size'>
+							 		<option selected="selected">10</option>
+							 		<option>20</option>
+							 		<option>30</option>
+							 		<option>50</option>
+							 		<option>75</option>
+							 		<option>100</option>
+								 </select>
+							<div class='items'>335104 items in 33511 pages</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>		
+		</form>
+	</body>	
+</html>

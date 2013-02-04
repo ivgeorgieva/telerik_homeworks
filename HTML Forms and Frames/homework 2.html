@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Homework 2</title>
+		<style type="text/css">
+			.table {
+				border-spacing: 0px;			
+			}
+			.col1 {
+				width: 120px;
+				text-align: right;	
+				font-weight: bold;
+				font-family: Verdana;		
+			}
+			.col3 {
+				width: 10px;
+				text-align: right;	
+				font-weight: bold;
+				font-family: Verdana;
+			}
+			.w95 {
+				width: 95%;
+			}
+			
+			.w50 {
+				width: 50%;
+			}
+			td {
+				border: 1px solid silver;
+				padding: 5px;
+			}
+			.date{
+				font-size: 16px ;
+				font-family: Verdana;
+			}
+			.sub {
+				background-color: #CCFFCC;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<table class='table'>
+				<tbody>
+					<tr>
+						<td class="col1"><label for='Lname'>Last Name</label></td>
+						<td colspan='3'><input id='Lname' type="text" name='Last Name' class='w95' value="Georgiev"/></td>
+					</tr>
+					<tr>
+						<td class="col1"><label for='Fname'>First Name</label></td>
+						<td colspan='3'><input id='Fname' type="text" class='w95' value="Hristo"/></td>
+					</tr>
+					<tr>
+						<td class='col1'><label for='address'>Address</label></td>
+						<td colspan='3'>
+							<textarea id='address' name='Address' rows="5" class='w95'>19 Hristo Botev Str. floor 2, apt. 4"</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="col1"><label for='city'>City</label></td>
+						<td><input id='city' type="text" value="Plovdiv" size="30"/></td>
+						<td class='col3'><label for='stateInput'>State</label></td>
+						<td><input id='stateInput' type='text' size="4"/></td>
+					</tr>
+					<tr>
+						<td class="col1"><label for='Pcode'>Zip/Postal Code</label></td>
+						<td colspan='3'><input id='Pcode' type="text" value="4200" size="10"/></td>
+					</tr>
+					<tr>
+						<td class="col1"><label for='SCountry'>Country</label></td>
+						<td colspan='3'>
+							<select name='Country' id='SCountry' class="w50">
+								<option value="BG" selected="selected">Bulgaria</option>
+								<option value="GB">England</option>
+								<option value="FR">France</option>	
+								<option value="IT">Italy</option>						
+								<option value="NO">Norway</option>	
+								<option value="ES">Spain</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="col1"><label for='tell'>Phone (country code, area code, number)</label></td>
+						<td colspan='3'>
+							( + <input id='tell' type="tel" pattern="\[0-9]{3}\" size="6" value="359"/> )
+							<input id='tell' type='tel' pattern="\[0-9]{2}\" size="6" value="87"/> &#8722;
+							<input id='tell' type='tel' pattern="\[0-9]{7}\" size="20" value="8359751"/> 
+						</td>
+					</tr>
+					<tr>
+						<td class="col1"><label for='Email'>E-mail</label></td>
+						<td colspan='3'><input id='Email' type="email" pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{3,}.[a-zA-Z0-9_]{2,4}" value="georgiev@gmail.com" class="w95"/></td>
+					</tr>
+					<tr>
+						<td class="col1"><label>Birth date</label></td>
+						<td colspan='3'>
+							<label for='M' class="date">Month</label>
+							<input id='M' type="month" name="Month" value="2" max="12" pattern="[0-9]{2}" required="required" size="2" maxlength="2"/>
+							<label for='D' class="date">Day</label>
+							<input id='D' type="text" name="Day" value="29" max="31" pattern="[0-9]{2}" required="required" size="2" maxlength="2"/>
+							<label for='Y' class="date">Year (4 digit)</label>
+							<input id='Y' type="text" name="Year" value="1980" pattern="[0-9]{4}" required="required" size="4" maxlength="4"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="col1"><label for='G'>Gender</label></td>
+						<td colspan='3'>
+							<select name='Gender' id='G'>
+								<option value="f">Female</option>
+								<option value="m" selected="selected">Male</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="col1"><label>Starting date</label></td>
+						<td colspan='3'>
+							<input id='1dateInput' type="radio" name='date'/>
+							<label for='1dateInput' class="date">Spring 2006</label>
+							<input id='2dateInput' type="radio" name='date'/>
+							<label for='2dateInput' class="date">Summer 2006</label>					
+						</td>
+					</tr>
+					<tr>
+						<td class='col1'><label for='Question'>Comments/Questions</label></td>
+						<td colspan='3'>
+							<textarea id='Question' name='Comments/Questions' rows="7" class='w95'>Please send me more information about the lodging.</textarea>
+						</td>
+					</tr>					
+					<tr>
+						<td colspan='4' class="sub">
+							<input type='submit' name="Submit" value="Submit"/>
+							<input type="reset" value="Clear This Form"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>		
+		</form>
+	</body>	
+</html>
