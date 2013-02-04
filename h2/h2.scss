@@ -1,0 +1,60 @@
+body, div, ul, li, a, ol, form, em, span, p, h1, h2, h3, h4, h5, h6, img, sub, sup, dl, dt, dd, fieldset, label, legend {
+	margin:0px;
+	padding:0px;
+	border:0px;
+}
+
+.fix{
+	zoom:1;
+	&:after{
+		float:none;
+		clear:both;
+		height:0px;
+		content:"";
+	}
+}
+
+body {
+	div {
+		margin: 20px auto;
+		height: 100px;
+		width: 870px;
+		position: relative;
+		@extend .fix;
+		
+		ul {
+			li {
+				list-style-type: none;
+				display: inline-block;
+				float: left;
+				padding: 2px;
+				clear: right;
+		
+			a {
+				text-decoration: none;
+				display: block;
+
+				img {
+					width: 120px;
+
+					&:nth-child(2){
+						display: none;
+						width: 450px;
+						position: absolute;
+						top: 120px;
+						left: 2px;
+					}
+				}
+
+				&:focus img:nth-child(2){
+					display:block;
+				}
+
+			}
+		}
+		}
+
+		
+	}
+
+}

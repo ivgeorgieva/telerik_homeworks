@@ -1,0 +1,357 @@
+.clearfix {
+	zoom:1;
+	&:after{
+		clear:both;	
+	}
+	&:after, &:before{
+		content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+	}
+}
+
+.clearfix, body header div#header-container, body header nav, body header nav ul, body header nav ul li ul.sub-nav-list, body section, body aside {
+    @extend .clearfix;
+}
+
+body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
+
+div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
+    display: block;
+}
+
+img {
+	border:0 none;
+	outline:none;		
+}
+
+@mixin linear-gradient ($from, $to, $repeat:no-repeat){
+	background: -moz-linear-gradient(top,  $from, $to);
+	background: -webkit-linear-gradient(top,  $from, $to); 
+	background: -o-linear-gradient(top,  $from, $to); 
+	background: -ms-linear-gradient(top,  $from, $to); 
+	background: linear-gradient(to bottom,  $from, $to);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=0 );
+	background-repeat:$repeat;
+}
+
+@mixin bg-aside{
+	background: url(images/li-dot.png) ;
+	background-repeat: no-repeat;
+    background-position: 0 50%;
+}
+
+@mixin border($width:1px, $style:solid, $br-color:#603382 ){
+	border-width:$width;
+	border-style:$style;
+	border-color:$br-color;
+}
+
+@mixin rounded-corner($vertical,$horizonal,$radius:10px) {	
+	border-#{$vertical}-#{$horizonal}-radius: $radius;
+	-moz-border-radius-#{$vertical}#{$horizonal}: $radius;
+	-webkit-border-#{$vertical}-#{$horizonal}-radius: $radius;
+}
+
+@mixin corners($radius:10px){
+	@include rounded-corner(top,left,$radius);
+	@include rounded-corner(top,right,$radius);
+	@include rounded-corner(bottom,right,$radius);
+	@include rounded-corner(bottom,left,$radius);
+}
+
+
+$bg:#9215F2;
+$color: #fff;
+$font-size: 14px;
+$font-style: normal;
+$font-family: Arial;
+$family1: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+$color-input: #b35ef3;
+$font-weight: bold;
+$button-hover: #8949b9;
+$link-color:#a8a8a8;
+$link:#C48CF8;
+$bg-sub-list: rgba(179, 94, 243, 0.9);
+$font-size-4:1.4em;
+$font-size-2:1.2em;
+$font-size-16:16px;
+$font-size-1:1.1em;
+
+
+body {
+    font: $font-size $font-style $font-family;
+    color:$color;
+    background-color: $bg;
+
+    header {
+        padding-top: 25px;
+        padding-bottom: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        @include
+		linear-gradient(#d58fff, #9215f2);
+    
+		div#header-container {
+			
+			div#logo-container {
+				float: left;
+				position: relative;
+				border: none; 
+			}
+
+			div#reg-form-container {
+            float: right;
+            position: relative;
+            right: 5%;
+            top: 50%;
+				
+				div { 
+					text-align: right;
+					
+					label {
+						width: 50px;
+						margin: 5px; 
+					}
+
+					input {
+						width: 130px;
+						@include
+						border;
+						border-radius: 10px;
+						padding: 2px 5px;
+						margin: 5px;            
+						background-color:$color-input;
+					}
+				}
+
+				button {
+					margin-left: auto;
+					margin-right: auto;
+					font-weight: $font-weight;
+					@include
+					border;
+					border-style: outset;
+					@include
+					corners;
+					padding: 5px 8px;
+					background-color:$color-input;
+					color:$color;
+				&:hover {
+                    background-color:$button-hover;
+                    border-style: inset;
+                }
+				}
+			}
+	
+		}
+
+		nav {
+			display: inline-block;
+            width: 75%;
+            margin: 20px 20px 20px 20px;
+            padding: 12px;
+            @include
+			border($br-color:black);
+			@include
+			corners;
+			
+			ul {
+
+				&.nav-list {
+                list-style-type: none;
+				}
+				
+				li {
+					float: left;
+					margin: 0;
+			
+					a {
+						text-decoration: none;
+						padding: 0 10px 0 10px;
+						color: $color;
+						font: $font-size-4 $font-style $font-family;
+					
+						&.selected {
+                        font-weight: $font-weight;
+						}
+					}
+				
+				&:hover > a {
+                    text-decoration: underline;
+                    color: $link-color;
+				& + ul {
+				display: block;
+                }
+				}
+      
+				ul {
+					&.sub-nav-list {
+						position: absolute;
+						display: none;
+						background-color: $bg-sub-list;
+						@include
+						corners(5px);
+					}
+					li {
+						float: none;
+						margin: 0 15px;
+						padding: 10px 0;
+						border-bottom:1px solid black;
+					
+						&:last-of-type {
+							border-bottom: none;
+						}
+
+						& > a {
+							font-size: $font-size-2;
+							color:$color;
+						}
+					}
+				}
+				}
+
+			}
+			
+		}
+	}
+
+	section {
+        width: 75%;
+        float: left;
+        color: black;
+		
+		article {
+            margin: 20px;
+            padding: 20px;
+            @include
+			border($br-color:black);
+            @include
+			corners;
+            color:$color;
+        
+			header {
+                background: none;
+                padding: 5px;
+				filter: none;
+            
+				h1 {
+                    font-size: $font-size-4;
+                    padding: 0;
+                }
+
+			}
+		
+			footer {
+					padding: 5px;
+			
+				p {
+                    font-size: $font-size-16;
+                    text-align: right;
+                    font-weight: normal;
+                
+					time {
+                        font-family: $family1;
+                    }
+
+					a {
+                        text-decoration: none;
+                        color:$link;
+                   
+				    &:hover {
+                            text-decoration: underline;
+                    }
+					}
+				}
+			}
+
+
+		}
+	}
+
+	aside {
+        float: left;
+        width: 20%;
+        margin: 20px;
+    
+		& > ul {
+				list-style-type: none;
+			
+			& > li {
+                margin: 15px 0;
+                padding: 15px;
+                @include
+				border($br-color:black); 
+                @include 
+				corners(5px);
+            
+				h2 {
+                    font-size: $font-size-1;
+                    font-weight: $font-weight;
+                }
+
+				p {
+                    margin-top: 10px;
+                    margin-right: 5px;
+                    margin-bottom: 10px;
+                    margin-left: 5px;
+                    font-size: $font-size;
+                
+					a {
+                        color: #aaaaaa;
+                        text-decoration: none;
+                    }
+					
+					strong {
+                        color: #cccccc;
+                        font-weight: $font-weight;
+                        font-style: $font-style;
+                    }
+					
+					em {
+                        color: #cccccc;
+                        font-weight: normal;
+                        font-style: italic;
+                    }
+				}
+				ul {
+						list-style-type: none;
+						margin-top: 10px;
+						margin-right: 0;
+						margin-bottom: 10px;
+						margin-left: 0px;
+                
+					li {
+                        margin-top: 5px;
+                        margin-left: 10px;
+                        margin-bottom: 0px;
+                        margin-right: 0px;
+                        @include 
+						bg-aside;
+                        padding-left: 25px;
+                    }
+				}
+			}
+		}
+	}
+
+	footer {
+        clear: both;
+        padding-top: 15px;
+        padding-bottom: 25px;
+        padding-right: 0px;
+        padding-left: 0px;
+    
+		p {
+            font-size: $font-size-2;
+            font-weight: $font-weight;
+            text-align:center;
+        }
+	}
+
+}

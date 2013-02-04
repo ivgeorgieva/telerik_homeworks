@@ -1,0 +1,31 @@
+body, div, ul, li, a, ol, form, em, span, p, h1, h2, h3, h4, h5, h6, img, sub, sup, dl, dt, dd, fieldset, label, legend {
+  margin: 0px;
+  padding: 0px;
+  border: 0px; }
+
+body form {
+  margin: 20px auto;
+  height: 100px;
+  width: 870px;
+  position: relative; }
+  body form ul li {
+    list-style-type: none;
+    display: inline-block;
+    float: left;
+    padding: 2px;
+    clear: right; }
+    body form ul li input {
+      display: none; }
+      body form ul li input + img {
+        display: none;
+        width: 450px;
+        position: absolute;
+        top: 120px;
+        left: 2px; }
+      body form ul li input:checked + img {
+        display: block; }
+    body form ul li label {
+      display: block; }
+      body form ul li label img {
+        width: 120px; }
+
