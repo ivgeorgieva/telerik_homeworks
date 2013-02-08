@@ -1,0 +1,342 @@
+.clearfix(){
+	zoom:1;
+	&:after{
+		clear:both;	
+	}
+	&:after, &:before{
+		content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+	}
+}
+
+
+.linear-gradient (@from, @to, @repeat:no-repeat){
+	background: -moz-linear-gradient(top,  @from, @to);
+	background: -webkit-linear-gradient(top,  @from, @to); 
+	background: -o-linear-gradient(top,  @from, @to); 
+	background: -ms-linear-gradient(top,  @from, @to); 
+	background: linear-gradient(to bottom,  @from, @to);
+	background-repeat:@repeat;
+}
+
+.bg-aside () {
+	background: url(images/li-dot.png) ;
+	background-repeat: no-repeat;
+    background-position: 0 50%;
+}
+
+.border (@br-color:#603382) {
+	border-width: 1px;
+	border-style: solid;
+	border-color: @br-color;
+}
+
+.rounded-corner(@radius:10px) {	
+	-moz-border-radius-: @radius;
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+}
+.padding (@p-top:25px, @p-right:15px, @p-bottom:5px, @p-left:15px) {
+	padding-top: @p-top;
+    padding-bottom: @p-bottom;
+    padding-right: @p-right;
+    padding-left: @p-left;
+}
+.margin (@m-top:10px, @m-right:5px, @m-bottom:10px, @m-left:5px) {
+	margin-top: @m-top;
+    margin-right: @m-right;
+    margin-bottom: @m-bottom;
+    margin-left: @m-left;
+}
+
+
+@bg:#9215F2;
+@color: #fff;
+@font-size: 14px;
+@font-style: normal;
+@font-family: Arial;
+@family1: Consolas, 'Lucida Console', 'DejaVu Sans Mono', monospace;
+@color-input: #b35ef3;
+@font-weight: bold;
+@button-hover: #8949b9;
+@link-color:#a8a8a8;
+@link:#C48CF8;
+@bg-sub-list: rgba(179, 94, 243, 0.9);
+@font-size-4:1.4em;
+@font-size-2:1.2em;
+@font-size-16:16px;
+@font-size-1:1.1em;
+
+
+body header div#header-container, body header nav, body header nav ul, body header nav ul li ul.sub-nav-list, body section, body aside {
+	   
+	.clearfix;
+	
+}
+
+body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
+
+div, h1, h3, h4, h5, h6, header, footer, body, section, nav, article, aside {
+    display: block;
+}
+
+img {
+	border:0 none;
+	outline:none;		
+}
+
+
+body {
+    font: @font-size @font-style @font-family;
+    color:@color;
+    background-color: @bg;
+    
+	header {
+        .padding;
+        .linear-gradient(#d58fff, #9215f2);
+    
+		div#header-container {
+			.clearfix;
+
+			div#logo-container {
+				float: left;
+				position: relative;
+				border: none; 
+			}
+
+			div#reg-form-container {
+            float: right;
+            position: relative;
+            right: 5%;
+            top: 50%;
+				
+				div { 
+					text-align: right;
+					
+					label {
+						width: 50px;
+						margin:5px; 
+					}
+
+					input {
+						width: 130px;
+						.border;
+						.rounded-corner;
+						.padding(2px, 5px, 2px, 5px);
+						margin: 5px;            
+						background-color:@color-input;
+					}
+				}
+
+				button {
+					margin-left: auto;
+					margin-right: auto;
+					font-weight: @font-weight;
+					.border;
+					border-style: outset;
+					.rounded-corner;
+					.padding(5px, 8px, 5px, 8px);
+					background-color:@color-input;
+					color:@color;
+				
+					&:hover {
+	                    background-color:@button-hover;
+	                    border-style: inset;
+	                }
+				}
+			}
+		}
+
+		nav {
+			display: inline-block;
+            width: 75%;
+            margin: 20px;
+            padding: 12px;
+            .border(#000);
+			.rounded-corner;
+			.clearfix;
+			
+			ul {
+				.clearfix;
+				
+				&.nav-list {
+                list-style-type: none;
+				}
+				
+				li {
+					float: left;
+					margin: 0;
+			
+					a {
+						text-decoration: none;
+						padding: 0 10px;
+						color: @color;
+						font: @font-size-4 @font-style @font-family;
+					
+						&.selected {
+                        font-weight: @font-weight;
+						}
+				}
+				
+				&:hover > a {
+                    text-decoration: underline;
+                    color: @link-color;
+				
+					& + ul {
+					display: block;
+	                }
+				}
+      
+					ul {
+						&.sub-nav-list {
+							position: absolute;
+							display: none;
+							background-color: @bg-sub-list;
+							.rounded-corner(5px);
+							.clearfix;
+						}
+						li {
+							float: none;
+							margin: 0 15px;
+							padding: 10px 0;
+							border-bottom:1px solid black;
+						
+							&:last-of-type {
+								border-bottom: none;
+							}
+	
+							& > a {
+								font-size: @font-size-2;
+								color:@color;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	section {
+        width: 75%;
+        float: left;
+        color: black;
+		.clearfix;
+		
+		article {
+            margin: 20px;
+            padding: 20px;
+            .border(#000);
+            .rounded-corner;
+            color:@color;
+        
+			header {
+                background: none;
+                padding: 5px;
+				filter: none;
+            
+				h1 {
+                    font-size: @font-size-4;
+                    padding: 0;
+                }
+
+			}
+		
+			footer {
+					padding: 5px;
+			
+				p {
+                    font-size: @font-size-16;
+                    text-align: right;
+                    font-weight: normal;
+                
+					time {
+                        font-family: @family1;
+                    }
+
+					a {
+                        text-decoration: none;
+                        color:@link;
+                   
+					    &:hover {
+	                            text-decoration: underline;
+	                    }
+					}
+				}
+			}
+		}
+	}
+
+	aside {
+        float: left;
+        width: 20%;
+        margin: 20px;
+		.clearfix;
+		
+		& > ul {
+				list-style-type: none;
+			
+			& > li {
+                margin: 15px 0;
+                padding: 15px;
+                .border(#000); 
+                .rounded-corner(5px);
+            
+				h2 {
+                    font-size: @font-size-1;
+                    font-weight: @font-weight;
+                }
+
+				p {
+					.margin;
+                    
+                    font-size: @font-size;
+                
+					a {
+                        color: #aaaaaa;
+                        text-decoration: none;
+                    }
+					
+					strong {
+                        color: #cccccc;
+                        font-weight: @font-weight;
+                        font-style: @font-style;
+                    }
+					
+					em {
+                        color: #cccccc;
+                        font-weight: normal;
+                        font-style: italic;
+                    }
+				}
+				
+				ul {
+						list-style-type: none;
+						margin: 10px 0;
+					li {
+                        .margin (5px, 10px, 0, 0);
+                        .bg-aside;
+                        padding-left: 25px;
+                    }
+				}
+			}
+		}
+	}
+
+	footer {
+        clear: both;
+        .padding (15px, 0, 25px, 0);
+    
+		p {
+            font-size: @font-size-2;
+            font-weight: @font-weight;
+            text-align:center;
+        }
+	}
+
+}
