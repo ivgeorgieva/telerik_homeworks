@@ -11,10 +11,6 @@
 	}
 }
 
-.clearfix, body header div#header-container, body header nav, body header nav ul, body header nav ul li ul.sub-nav-list, body section, body aside {
-    @extend .clearfix;
-}
-
 body, header, section, footer, article, h1, h2, h3, h4, h5, h6, input, button, label, p, fieldset, nav, ul, li, a, span, strong, em {
     margin: 0;
     padding: 0;
@@ -98,7 +94,8 @@ body {
 		linear-gradient(#d58fff, #9215f2);
     
 		div#header-container {
-			
+			@extend .clearfix;
+
 			div#logo-container {
 				float: left;
 				position: relative;
@@ -156,12 +153,12 @@ body {
             width: 75%;
             margin: 20px 20px 20px 20px;
             padding: 12px;
-            @include
-			border($br-color:black);
-			@include
-			corners;
-			
+            @include border($br-color:black);
+			@include corners;
+			@extend .clearfix;
+
 			ul {
+				@extend .clearfix;
 
 				&.nav-list {
                 list-style-type: none;
@@ -197,7 +194,9 @@ body {
 						background-color: $bg-sub-list;
 						@include
 						corners(5px);
+						@extend .clearfix;
 					}
+
 					li {
 						float: none;
 						margin: 0 15px;
@@ -225,7 +224,8 @@ body {
         width: 75%;
         float: left;
         color: black;
-		
+		@extend .clearfix;
+
 		article {
             margin: 20px;
             padding: 20px;
@@ -278,7 +278,8 @@ body {
         float: left;
         width: 20%;
         margin: 20px;
-    
+		@extend .clearfix;
+
 		& > ul {
 				list-style-type: none;
 			
